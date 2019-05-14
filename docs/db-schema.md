@@ -28,6 +28,7 @@ collection: `user`
 | `activationCode` | string                        | 激活码       |                                    |
 | `level`          | [Level](#level)               | 会员级别     |                                    |
 | `achievement`    | [Achievement](#achievement)[] | 成就         |                                    |
+| `from`           | string                        | 渠道         |                                    |
 | `state`          | string                        | 状态         | ( inactive \| active \| forbidden) |
 | `createdAt`      | number                        | 创建日期     | UNIX 时间戳                        |
 | `updatedAt`      | number                        | 上次更新日期 | UNIX 时间戳                        |
