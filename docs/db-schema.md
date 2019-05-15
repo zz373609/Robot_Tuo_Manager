@@ -28,7 +28,7 @@ collection: `user`
 | `activationCode` | string                        | 激活码       |                                    |
 | `level`          | [Level](#level)               | 会员级别     |                                    |
 | `achievement`    | [Achievement](#achievement)[] | 成就         |                                    |
-| `from`           | string                        | 渠道         |                                    |
+| `from`           | [From](#from)                 | 渠道         |                                    |
 | `state`          | string                        | 状态         | ( inactive \| active \| forbidden) |
 | `createdAt`      | number                        | 创建日期     | UNIX 时间戳                        |
 | `updatedAt`      | number                        | 上次更新日期 | UNIX 时间戳                        |
@@ -37,6 +37,13 @@ collection: `user`
 PS: [微信小程序用户信息 API](https://developers.weixin.qq.com/miniprogram/dev/api/UserInfo.html)
 
 #### objects
+
+##### From
+
+| 字段   | 类型   | 名称     | 说明 |
+| ------ | ------ | -------- | ---- |
+| `type` | string | 渠道类型 |      |
+| `name` | string | 名称     |      |
 
 ##### Level
 
