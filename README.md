@@ -12,3 +12,13 @@
 
 ### done 
 列表为已经完成的任务
+
+
+前度接收格式
+
+`{
+ text:String,
+ voice:String(cdn_link),
+ video:String(cdn_link),
+ image:String(cdn_link)
+}`
