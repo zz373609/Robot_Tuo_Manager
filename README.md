@@ -20,5 +20,9 @@
  text:String,
  voice:String(cdn_link),
  video:String(cdn_link),
- image:String(cdn_link)
+ image:String(cdn_link),
+ location:{
+  lat:Double,
+  long:Double
+ }
 }`
