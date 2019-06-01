@@ -23,7 +23,7 @@ POST /robot/talk
 ## 问答
 
 ```
-GET /robot/ask
+POST /robot/ask
 ```
 
 | 属性        | 位置 | 类型 | 是否必填 | 描述                                               |
