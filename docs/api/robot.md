@@ -3,7 +3,7 @@
 ## 语音识别文字
 
 ```
-POST /talk
+POST /robot/talk
 ```
 
 | 属性       | 位置      | 类型 | 是否必填 | 描述                                               |
@@ -22,7 +22,7 @@ POST /talk
 ## 问答
 
 ```
-GET /ask
+GET /robot/ask
 ```
 
 | 属性       | 位置 | 类型 | 是否必填 | 描述                                               |
