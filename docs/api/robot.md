@@ -26,11 +26,12 @@ POST /robot/talk
 GET /robot/ask
 ```
 
-| 属性       | 位置 | 类型 | 是否必填 | 描述                                               |
-| ---------- | ---- | ---- | -------- | -------------------------------------------------- |
-| `question` | body | str  | yes      | 音频文件                                           |
-| `robot`    | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu, xunfei         |
-| `provider` | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, baidu, xunfei |
+| 属性        | 位置 | 类型 | 是否必填 | 描述                                               |
+| ----------- | ---- | ---- | -------- | -------------------------------------------------- |
+| `wechat_id` | body | str  | yes      | 微信用户ID                                         |
+| `question`  | body | str  | yes      | 问题                                               |
+| `robot`     | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu, xunfei         |
+| `provider`  | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, baidu, xunfei |
 
 响应数据：
 
