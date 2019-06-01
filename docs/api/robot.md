@@ -56,6 +56,8 @@ POST /robot/ask
     }
   ],
   "location": {
+    "name": "天河潭",
+    "valid": true,
     "lat": 45.00,
     "long": 45.00
   }
