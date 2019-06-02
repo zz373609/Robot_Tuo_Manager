@@ -10,7 +10,7 @@ POST /robot/talk
 | ---------- | --------- | ---- | -------- | -------------------------------------------------- |
 | `wechat_id` | form-data | str  | yes       | 微信用户ID |
 | `file`     | form-data | file | yes      | 音频文件                                           |
-| `provider` | form-data | str  | no       | 语音识别提供者(默认ths)。可选择:ths, baidu, xunfei |
+| `provider` | form-data | str  | no       | 语音识别提供者(默认ths)。可选择:ths, xunfei |
 
 响应数据：
 
@@ -26,12 +26,12 @@ POST /robot/talk
 POST /robot/ask
 ```
 
-| 属性        | 位置 | 类型 | 是否必填 | 描述                                       |
-| ----------- | ---- | ---- | -------- | ------------------------------------------ |
-| `wechat_id` | body | str  | yes      | 微信用户ID                                 |
-| `question`  | body | str  | yes      | 问题                                       |
-| `robot`     | body | str  | no       | 机器人(默认ths)。可选择:ths, xunfei        |
-| `provider`  | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, baidu |
+| 属性        | 位置 | 类型 | 是否必填 | 描述                                        |
+| ----------- | ---- | ---- | -------- | ------------------------------------------- |
+| `wechat_id` | body | str  | yes      | 微信用户ID                                  |
+| `question`  | body | str  | yes      | 问题                                        |
+| `robot`     | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu          |
+| `provider`  | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, xunfei |
 
 响应数据：
 
