@@ -10,7 +10,7 @@ POST /robot/talk
 | ---------- | --------- | ---- | -------- | -------------------------------------------------- |
 | `wechat_id` | form-data | str  | yes       | 微信用户ID |
 | `file`     | form-data | file | yes      | 音频文件                                           |
-| `provider` | form-data | str  | no       | 语音识别提供者(默认ths)。可选择:ths, xunfei |
+| `provider` | form-data | str  | no       | 语音识别提供者(默认ths)。可选择:ths, xunfei, baidu |
 
 响应数据：
 
