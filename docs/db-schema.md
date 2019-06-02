@@ -67,13 +67,14 @@ collection: `audio`
 | `text`       | string | 转换文本       |             |
 | `created_at` | number | 创建日期       | UNIX 时间戳 |
 
-### 景点
+### 景点位置
 
-collection: `spot`
+collection: `location`
 
-| 字段        | 类型   | 名称   | 说明 |
-| ----------- | ------ | ------ | ---- |
-| `_id`       | number | ID     | 主键 |
-| `name`      | string | 景点名 |      |
-| `longitude` | number | 经度   |      |
-| `latitude`  | number | 纬度   |      |
+| 字段   | 类型   | 名称   | 说明 |
+| ------ | ------ | ------ | ---- |
+| `_id`  | number | ID     | 主键 |
+| `name` | string | 景点名 |      |
+| `long` | number | 经度   |      |
+| `lat`  | number | 纬度   |      |
+
