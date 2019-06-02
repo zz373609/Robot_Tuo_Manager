@@ -26,12 +26,13 @@ POST /robot/talk
 POST /robot/ask
 ```
 
-| 属性        | 位置 | 类型 | 是否必填 | 描述                                        |
-| ----------- | ---- | ---- | -------- | ------------------------------------------- |
-| `wechat_id` | body | str  | yes      | 微信用户ID                                  |
-| `question`  | body | str  | yes      | 问题                                        |
-| `robot`     | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu          |
-| `provider`  | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, xunfei |
+| 属性         | 位置 | 类型 | 是否必填 | 描述                                        |
+| ------------ | ---- | ---- | -------- | ------------------------------------------- |
+| `wechat_id`  | body | str  | yes      | 微信用户ID                                  |
+| `question`   | body | str  | yes      | 问题                                        |
+| `robot`      | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu          |
+| `provider`   | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, xunfei |
+| `session_id` | body | str  | yes      | 会话ID                                      |
 
 响应数据：
 
@@ -60,7 +61,8 @@ POST /robot/ask
     "valid": true,
     "lat": 45.00,
     "long": 45.00
-  }
+  },
+  "session_id": "xxx"
 }
 ```
 
