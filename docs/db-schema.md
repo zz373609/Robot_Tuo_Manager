@@ -10,31 +10,22 @@
 
 collection: `user`
 
-| 字段              | 类型                          | 名称         | 说明                               |
-| ----------------- | ----------------------------- | ------------ | ---------------------------------- |
-| `_id`             | string                        | 用户 ID      | 主键                               |
-| `wechat_id`       | string                        | 微信 ID      | unique index                       |
-| `youzan_id`       | string                        | 有赞 ID      | unique index                       |
-| `nickname`        | string                        | 昵称         |                                    |
-| `gender`          | number                        | 性别         | 0 未知，1 男性，2 女性             |
-| `country`         | string                        | 国家         |                                    |
-| `province`        | string                        | 省份         |                                    |
-| `city`            | string                        | 城市         |                                    |
-| `language`        | string                        | 语言         |                                    |
-| `activation_code` | string                        | 激活码       |                                    |
-| `level`           | [Level](#level)               | 会员级别     |                                    |
-| `achievement`     | [Achievement](#achievement)[] | 成就         |                                    |
-| `from_type`       | [fromType](#fromType)         | 渠道         |                                    |
-| `state`           | string                        | 状态         | ( inactive \| active \| forbidden) |
-| `created_at`      | number                        | 创建日期     | UNIX 时间戳                        |
-| `updated_at`      | number                        | 上次更新日期 | UNIX 时间戳                        |
-| `deleted_at`      | number                        | 删除日期     | UNIX 时间戳                        |
+| 字段              | 类型                      | 名称     | 说明                               |
+| ----------------- | ------------------------- | -------- | ---------------------------------- |
+| `_id`             | string                    | 用户 ID  | 主键                               |
+| `wechat_id`       | string                    | 微信 ID  | unique index                       |
+| `activation_code` | string                    | 激活码   |                                    |
+| `level`           | [Level](#level)           | 会员级别 |                                    |
+| `footprint`       | [Footprint](#footprint)[] | 足迹     |                                    |
+| `source`          | [Source](#source)         | 渠道     |                                    |
+| `state`           | string                    | 状态     | ( inactive \| active \| forbidden) |
+| `created_at`      | number                    | 创建日期 | UNIX 时间戳                        |
 
 PS: [微信小程序用户信息 API](https://developers.weixin.qq.com/miniprogram/dev/api/UserInfo.html)
 
 #### objects
 
-##### FromType
+##### Source
 
 | 字段   | 类型   | 名称     | 说明 |
 | ------ | ------ | -------- | ---- |
@@ -48,12 +39,12 @@ PS: [微信小程序用户信息 API](https://developers.weixin.qq.com/miniprogr
 | `name`  | string | 级别名称 |      |
 | `price` | number | 定价     |      |
 
-##### Achievement
+##### Footprint
 
 | 字段         | 类型   | 名称         | 说明        |
 | ------------ | ------ | ------------ | ----------- |
-| `name`       | string | 成就名称     |             |
-| `created_at` | number | 成就达成日期 | UNIX 时间戳 |
+| `place`      | string | 景点名       |             |
+| `created_at` | number | 景点到达日期 | UNIX 时间戳 |
 
 ### 用户录音记录
 
@@ -73,7 +64,7 @@ collection: `location`
 
 | 字段   | 类型   | 名称   | 说明 |
 | ------ | ------ | ------ | ---- |
-| `_id`  | number | ID     | 主键 |
+| `_id`  | string | ID     | 主键 |
 | `name` | string | 景点名 |      |
 | `long` | number | 经度   |      |
 | `lat`  | number | 纬度   |      |
@@ -84,8 +75,8 @@ collection: `event`
 
 | 字段         | 类型              | 名称     | 说明 |
 | ------------ | ----------------- | -------- | ---- |
-| `_id`        | number            | ID       | 主键 |
-| `key`        | string            | 事件类型     |      |
+| `_id`        | string            | ID       | 主键 |
+| `key`        | string            | 事件类型 |      |
 | `desc`       | string            | 事件描述 |      |
 | `audio`      | [Audio](#audio)[] | 语音列表 |      |
 | `created_at` | string            | 创建时间 |      |
@@ -101,4 +92,15 @@ collection: `event`
 
 ### 激活码
 
-collection: `activation_code`
+collection: `activation`
+
+| 字段         | 类型              | 名称         | 说明                 |
+| ------------ | ----------------- | ------------ | -------------------- |
+| `_id`        | string            | ID           | 主键                 |
+| `code`       | string            | 激活码       |                      |
+| `level`      | [Level](#level)   | 会员级别     |                      |
+| `source`     | [Source](#source) | 来源信息     |                      |
+| `wechat_id`  | string            | 绑定微信用户 | 若为空，代表没使用过 |
+| `created_at` | number            | 创建时间     |                      |
+| `expired_at` | number            | 过期时间     |                      |
+| `used_at`    | number            | 使用时间     |                      |
