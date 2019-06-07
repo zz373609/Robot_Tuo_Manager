@@ -94,6 +94,8 @@ GET /event
 
 响应数据：
 
+key是事件类型。
+
 ```json
 {
   "touch_head": {
