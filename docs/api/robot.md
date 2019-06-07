@@ -203,6 +203,7 @@ GET /user/:wechat_id/coupon
       "wechat_id": "xxx",
       "name": "yyy",
       "code": "abc",
+      "spot": "abc",
       "used": false,
       "created_at": 1234567890,
       "used_at": 0
@@ -210,6 +211,7 @@ GET /user/:wechat_id/coupon
     {
       "wechat_id": "xxx",
       "name": "zzz",
+      "spot": "def",
       "code": "def",
       "used": true,
       "created_at": 1234567890,
@@ -225,9 +227,10 @@ GET /user/:wechat_id/coupon
 POST /user/:wechat_id/coupon
 ```
 
-| 属性   | 位置 | 类型   | 是否必填 | 描述       |
-| ------ | ---- | ------ | -------- | ---------- |
-| `name` | data | string | 是       | 优惠券名称 |
+| 属性   | 位置 | 类型   | 是否必填 | 描述           |
+| ------ | ---- | ------ | -------- | -------------- |
+| `spot` | data | string | 是       | 优惠券适用景区 |
+| `name` | data | string | 是       | 优惠券名称     |
 
 响应数据：
 
@@ -236,6 +239,7 @@ POST /user/:wechat_id/coupon
   "wechat_id": "xxx",
   "name": "yyy",
   "code": "abc",
+  "spot": "abc",
   "used": false,
   "created_at": 1234567890,
   "used_at": 0
