@@ -10,27 +10,26 @@
 
 collection: `user`
 
-| 字段              | 类型                      | 名称     | 说明                               |
-| ----------------- | ------------------------- | -------- | ---------------------------------- |
-| `_id`             | string                    | 用户 ID  | 主键                               |
-| `wechat_id`       | string                    | 微信 ID  | unique index                       |
-| `activation_code` | string                    | 激活码   |                                    |
-| `level`           | [Level](#level)           | 会员级别 |                                    |
-| `footprint`       | [Footprint](#footprint)[] | 足迹     |                                    |
-| `source`          | [Source](#source)         | 渠道     |                                    |
-| `state`           | string                    | 状态     | ( inactive \| active \| forbidden) |
-| `created_at`      | number                    | 创建日期 | UNIX 时间戳                        |
+| 字段         | 类型                      | 名称     | 说明                               |
+| ------------ | ------------------------- | -------- | ---------------------------------- |
+| `_id`        | string                    | 用户 ID  | 主键                               |
+| `wechat_id`  | string                    | 微信 ID  | unique index                       |
+| `level`      | [Level](#level)           | 会员级别 |                                    |
+| `footprint`  | [Footprint](#footprint)[] | 足迹     |                                    |
+| `tags`       | [Tag](#tag)[]             | 标签     |                                    |
+| `state`      | string                    | 状态     | ( inactive \| active \| forbidden) |
+| `created_at` | number                    | 创建日期 | UNIX 时间戳                        |
 
 PS: [微信小程序用户信息 API](https://developers.weixin.qq.com/miniprogram/dev/api/UserInfo.html)
 
 #### objects
 
-##### Source
+##### Tag
 
-| 字段   | 类型   | 名称     | 说明 |
-| ------ | ------ | -------- | ---- |
-| `kind` | string | 渠道类型 |      |
-| `name` | string | 名称     |      |
+| 字段   | 类型   | 名称   | 说明 |
+| ------ | ------ | ------ | ---- |
+| `name` | string | 标签名 |      |
+| `code` | string | 激活码 |      |
 
 ##### Level
 
@@ -94,13 +93,13 @@ collection: `event`
 
 collection: `activation`
 
-| 字段         | 类型              | 名称         | 说明                 |
-| ------------ | ----------------- | ------------ | -------------------- |
-| `_id`        | string            | ID           | 主键                 |
-| `code`       | string            | 激活码       |                      |
-| `level`      | [Level](#level)   | 会员级别     |                      |
-| `source`     | [Source](#source) | 来源信息     |                      |
-| `wechat_id`  | string            | 绑定微信用户 | 若为空，代表没使用过 |
-| `created_at` | number            | 创建时间     |                      |
-| `expired_at` | number            | 过期时间     |                      |
-| `used_at`    | number            | 使用时间     |                      |
+| 字段         | 类型   | 名称         | 说明                 |
+| ------------ | ------ | ------------ | -------------------- |
+| `_id`        | string | ID           | 主键                 |
+| `code`       | string | 激活码       |                      |
+| `kind`       | string | 类型         |                      |
+| `name`       | string | 名称         |                      |
+| `wechat_id`  | string | 绑定微信用户 | 若为空，代表没使用过 |
+| `created_at` | number | 创建时间     |                      |
+| `expired_at` | number | 过期时间     |                      |
+| `used_at`    | number | 使用时间     |                      |
