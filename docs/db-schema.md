@@ -78,3 +78,27 @@ collection: `location`
 | `long` | number | 经度   |      |
 | `lat`  | number | 纬度   |      |
 
+### 事件
+
+collection: `event`
+
+| 字段         | 类型              | 名称     | 说明 |
+| ------------ | ----------------- | -------- | ---- |
+| `_id`        | number            | ID       | 主键 |
+| `key`        | string            | 事件类型     |      |
+| `desc`       | string            | 事件描述 |      |
+| `audio`      | [Audio](#audio)[] | 语音列表 |      |
+| `created_at` | string            | 创建时间 |      |
+
+#### objects
+
+##### Audio
+
+| 字段   | 类型   | 名称     | 说明 |
+| ------ | ------ | -------- | ---- |
+| `text` | string | 语音文本 |      |
+| `link` | string | 语音链接 |      |
+
+### 激活码
+
+collection: `activation_code`

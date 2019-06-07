@@ -6,11 +6,11 @@
 POST /robot/talk
 ```
 
-| 属性       | 位置      | 类型 | 是否必填 | 描述                                               |
-| ---------- | --------- | ---- | -------- | -------------------------------------------------- |
-| `wechat_id` | form-data | str  | yes       | 微信用户ID |
-| `file`     | form-data | file | yes      | 音频文件                                           |
-| `provider` | form-data | str  | no       | 语音识别提供者(默认ths)。可选择:ths, xunfei, baidu |
+| 属性        | 位置      | 类型 | 是否必填 | 描述                                                |
+| ----------- | --------- | ---- | -------- | --------------------------------------------------- |
+| `wechat_id` | form-data | str  | yes      | 微信用户 ID                                         |
+| `file`      | form-data | file | yes      | 音频文件                                            |
+| `provider`  | form-data | str  | no       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
 
 响应数据：
 
@@ -20,19 +20,39 @@ POST /robot/talk
 }
 ```
 
+## 文字合成语音
+
+```
+POST /robot/to_audio
+```
+
+| 属性       | 位置 | 类型  | 是否必填 | 描述                                                |
+| ---------- | ---- | ----- | -------- | --------------------------------------------------- |
+| `texts`    | data | str[] | yes      | 文字                                                |
+| `provider` | data | str   | no       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
+
+响应数据：
+
+```json
+{
+  "text": "你好",
+  "link": "https://"
+}
+```
+
 ## 问答
 
 ```
 POST /robot/ask
 ```
 
-| 属性         | 位置 | 类型 | 是否必填 | 描述                                        |
-| ------------ | ---- | ---- | -------- | ------------------------------------------- |
-| `wechat_id`  | body | str  | yes      | 微信用户ID                                  |
-| `question`   | body | str  | yes      | 问题                                        |
-| `robot`      | body | str  | no       | 机器人(默认ths)。可选择:ths, baidu          |
-| `provider`   | body | str  | no       | 语音合成提供者(默认ths)。可选择:ths, xunfei |
-| `session_id` | body | str  | yes      | 会话ID                                      |
+| 属性         | 位置 | 类型 | 是否必填 | 描述                                         |
+| ------------ | ---- | ---- | -------- | -------------------------------------------- |
+| `wechat_id`  | body | str  | yes      | 微信用户 ID                                  |
+| `question`   | body | str  | yes      | 问题                                         |
+| `robot`      | body | str  | no       | 机器人(默认 ths)。可选择:ths, baidu          |
+| `provider`   | body | str  | no       | 语音合成提供者(默认 ths)。可选择:ths, xunfei |
+| `session_id` | body | str  | yes      | 会话 ID                                      |
 
 响应数据：
 
@@ -59,10 +79,40 @@ POST /robot/ask
   "location": {
     "name": "天河潭",
     "valid": true,
-    "lat": 45.00,
-    "long": 45.00
+    "lat": 45.0,
+    "long": 45.0
   },
   "session_id": "xxx"
 }
 ```
 
+## 事件语音
+
+```
+GET /event
+```
+
+响应数据：
+
+```json
+{
+  "touch_head": {
+    "desc": "摸头",
+    "audio": [
+      {
+        "text": "你好你好",
+        "link": "https://"
+      }
+    ]
+  },
+  "touch_body": {
+    "desc": "摸身体",
+    "audio": [
+      {
+        "text": "娃哈哈哈",
+        "link": "https://"
+      }
+    ]
+  }
+}
+```
