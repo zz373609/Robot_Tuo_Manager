@@ -6,11 +6,11 @@
 POST /robot/talk
 ```
 
-| 属性        | 位置      | 类型 | 是否必填 | 描述                                                |
-| ----------- | --------- | ---- | -------- | --------------------------------------------------- |
-| `wechat_id` | form-data | str  | yes      | 微信用户 ID                                         |
-| `file`      | form-data | file | yes      | 音频文件                                            |
-| `provider`  | form-data | str  | no       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
+| 属性        | 位置      | 类型   | 是否必填 | 描述                                                |
+| ----------- | --------- | ------ | -------- | --------------------------------------------------- |
+| `wechat_id` | form-data | string | 是       | 微信用户 ID                                         |
+| `file`      | form-data | file   | 是       | 音频文件                                            |
+| `provider`  | form-data | string | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
 
 响应数据：
 
@@ -26,10 +26,10 @@ POST /robot/talk
 POST /robot/to_audio
 ```
 
-| 属性       | 位置 | 类型  | 是否必填 | 描述                                                |
-| ---------- | ---- | ----- | -------- | --------------------------------------------------- |
-| `texts`    | data | str[] | yes      | 文字                                                |
-| `provider` | data | str   | no       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
+| 属性       | 位置 | 类型     | 是否必填 | 描述                                                |
+| ---------- | ---- | -------- | -------- | --------------------------------------------------- |
+| `texts`    | data | string[] | 是       | 文字                                                |
+| `provider` | data | string   | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
 
 响应数据：
 
@@ -46,13 +46,13 @@ POST /robot/to_audio
 POST /robot/ask
 ```
 
-| 属性         | 位置 | 类型 | 是否必填 | 描述                                         |
-| ------------ | ---- | ---- | -------- | -------------------------------------------- |
-| `wechat_id`  | body | str  | yes      | 微信用户 ID                                  |
-| `question`   | body | str  | yes      | 问题                                         |
-| `robot`      | body | str  | no       | 机器人(默认 ths)。可选择:ths, baidu          |
-| `provider`   | body | str  | no       | 语音合成提供者(默认 ths)。可选择:ths, xunfei |
-| `session_id` | body | str  | yes      | 会话 ID                                      |
+| 属性         | 位置 | 类型   | 是否必填 | 描述                                         |
+| ------------ | ---- | ------ | -------- | -------------------------------------------- |
+| `wechat_id`  | body | string | 是       | 微信用户 ID                                  |
+| `question`   | body | string | 是       | 问题                                         |
+| `robot`      | body | string | 否       | 机器人(默认 ths)。可选择:ths, baidu          |
+| `provider`   | body | string | 否       | 语音合成提供者(默认 ths)。可选择:ths, xunfei |
+| `session_id` | body | string | 是       | 会话 ID                                      |
 
 响应数据：
 
@@ -94,7 +94,7 @@ GET /event
 
 响应数据：
 
-key是事件类型。
+key 是事件类型。
 
 ```json
 {
@@ -116,5 +116,128 @@ key是事件类型。
       }
     ]
   }
+}
+```
+
+## 注册用户
+
+```
+POST /user
+```
+
+| 属性              | 位置 | 类型   | 是否必填 | 描述         |
+| ----------------- | ---- | ------ | -------- | ------------ |
+| `wechat_code`     | data | string | 是       | 微信 js_code |
+| `activation_code` | data | string | 否       | 激活码       |
+
+响应数据：
+
+```json
+{
+  "is_new": true,
+  "user": {
+    "id": "xxx",
+    "wechat_id": "yyy",
+    "tags": [],
+    "level": "普通会员",
+    "state": "active",
+    "created_at": 123456890
+  }
+}
+```
+
+## 查看用户足迹
+
+```
+GET /user/:wechat_id/footprint
+```
+
+响应数据：
+
+```json
+{
+  "footprint": [
+    {
+      "place": "太阳广场",
+      "created_at": 1234567890
+    },
+    {
+      "place": "月亮广场",
+      "created_at": 1234567890
+    }
+  ]
+}
+```
+
+## 添加用户足迹
+
+```
+POST /user/:wechat_id/footprint
+```
+
+| 属性    | 位置 | 类型   | 是否必填 | 描述     |
+| ------- | ---- | ------ | -------- | -------- |
+| `place` | data | string | 是       | 地点名称 |
+
+响应数据：
+
+```json
+{
+  "place": "太阳广场",
+  "created_at": 1234567890
+}
+```
+
+## 查看用户优惠券
+
+```
+GET /user/:wechat_id/coupon
+```
+
+响应数据：
+
+```json
+{
+  "coupon": [
+    {
+      "wechat_id": "xxx",
+      "name": "yyy",
+      "code": "abc",
+      "used": false,
+      "created_at": 1234567890,
+      "used_at": 0
+    },
+    {
+      "wechat_id": "xxx",
+      "name": "zzz",
+      "code": "def",
+      "used": true,
+      "created_at": 1234567890,
+      "used_at": 1234567890
+    }
+  ]
+}
+```
+
+## 添加用户优惠券
+
+```
+POST /user/:wechat_id/coupon
+```
+
+| 属性   | 位置 | 类型   | 是否必填 | 描述       |
+| ------ | ---- | ------ | -------- | ---------- |
+| `name` | data | string | 是       | 优惠券名称 |
+
+响应数据：
+
+```json
+{
+  "wechat_id": "xxx",
+  "name": "yyy",
+  "code": "abc",
+  "used": false,
+  "created_at": 1234567890,
+  "used_at": 0
 }
 ```
