@@ -15,7 +15,6 @@ collection: `user`
 | `_id`        | string                    | 用户 ID  | 主键                               |
 | `wechat_id`  | string                    | 微信 ID  | unique index                       |
 | `level`      | [Level](#level)           | 会员级别 |                                    |
-| `footprint`  | [Footprint](#footprint)[] | 足迹     |                                    |
 | `tags`       | [Tag](#tag)[]             | 标签     |                                    |
 | `state`      | string                    | 状态     | ( inactive \| active \| forbidden) |
 | `created_at` | number                    | 创建日期 | UNIX 时间戳                        |
@@ -38,12 +37,30 @@ PS: [微信小程序用户信息 API](https://developers.weixin.qq.com/miniprogr
 | `name`  | string | 级别名称 |      |
 | `price` | number | 定价     |      |
 
-##### Footprint
+### 足迹
+
+collection: `footprint`
 
 | 字段         | 类型   | 名称         | 说明        |
 | ------------ | ------ | ------------ | ----------- |
+| `_id`        | string | ID           | 主键        |
+| `wechat_id`  | string | 用户 ID      |             |
 | `place`      | string | 景点名       |             |
 | `created_at` | number | 景点到达日期 | UNIX 时间戳 |
+
+### 优惠券
+
+collection: `coupon`
+
+| 字段         | 类型    | 名称       | 说明        |
+| ------------ | ------- | ---------- | ----------- |
+| `_id`        | string  | ID         | 主键        |
+| `wechat_id`  | string  | 用户 ID    |             |
+| `name`       | string  | 优惠券名称 |             |
+| `code`       | string  | 优惠码     |             |
+| `used`       | boolean | 是否使用过 |             |
+| `created_at` | number  | 添加时间   | UNIX 时间戳 |
+| `used_at`    | number  | 使用时间   | UNIX 时间戳 |
 
 ### 用户录音记录
 
