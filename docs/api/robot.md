@@ -202,6 +202,7 @@ POST /user/:wechat_id/footprint
 
 ```json
 {
+  "valid_place": true,
   "current_place": {
     "first_time": true,
     "place": "太阳广场",
