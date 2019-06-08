@@ -42,6 +42,7 @@ POST /robot/to_audio
 | ---------- | ---- | -------- | -------- | --------------------------------------------------- |
 | `texts`    | data | string[] | 是       | 文字                                                |
 | `provider` | data | string   | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
+| `voice`    | data | string   | 否       | 朗诵人(当前仅讯飞可用，默认xiaoyan) |
 
 响应数据：
 
