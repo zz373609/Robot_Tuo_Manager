@@ -208,21 +208,7 @@ POST /user/:wechat_id/footprint
     "lat": "26.444836",
     "long": "106.581438",
     "created_at": 1234567890
-  },
-  "footprint": [
-    {
-      "place": "太阳广场",
-      "lat": "26.444836",
-      "long": "106.581438",
-      "created_at": 1234567890
-    },
-    {
-      "place": "月亮广场",
-      "lat": "26.444836",
-      "long": "106.581438",
-      "created_at": 1234567890
-    }
-  ]
+  }
 }
 ```
 
