@@ -11,6 +11,7 @@
   - [查看用户优惠券](#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8)
   - [添加用户优惠券](#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8)
   - [获取景点位置信息](#%E8%8E%B7%E5%8F%96%E6%99%AF%E7%82%B9%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
+  - [支付](#%E6%94%AF%E4%BB%98)
 
 ## 语音识别文字
 
@@ -42,7 +43,7 @@ POST /robot/to_audio
 | ---------- | ---- | -------- | -------- | --------------------------------------------------- |
 | `texts`    | data | string[] | 是       | 文字                                                |
 | `provider` | data | string   | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
-| `voice`    | data | string   | 否       | 朗诵人(当前仅讯飞可用，默认xiaoyan) |
+| `voice`    | data | string   | 否       | 朗诵人(当前仅讯飞可用，默认 xiaoyan)                |
 
 响应数据：
 
@@ -283,5 +284,29 @@ GET /location
       "id": "5cf2af19278e4e14a18f7570"
     }
   ]
+}
+```
+
+## 支付
+
+```
+POST /pay
+```
+
+| 属性        | 位置 | 类型   | 是否必填 | 描述    |
+| ----------- | ---- | ------ | -------- | ------- |
+| `wechat_id` | data | string | 是       | 用户 ID |
+| `good_id`   | data | string | 是       | 商品 ID |
+
+响应数据：
+
+```json
+{
+  "appId": "app_id",
+  "nonceStr": "nonce_str",
+  "package": "package",
+  "sign": "sign",
+  "signType": "MD5",
+  "timeStamp": "timestamp"
 }
 ```
