@@ -173,10 +173,14 @@ GET /user/:wechat_id/footprint
   "footprint": [
     {
       "place": "太阳广场",
+      "lat": "26.444836",
+      "long": "106.581438",
       "created_at": 1234567890
     },
     {
       "place": "月亮广场",
+      "lat": "26.444836",
+      "long": "106.581438",
       "created_at": 1234567890
     }
   ]
@@ -189,16 +193,36 @@ GET /user/:wechat_id/footprint
 POST /user/:wechat_id/footprint
 ```
 
-| 属性    | 位置 | 类型   | 是否必填 | 描述     |
-| ------- | ---- | ------ | -------- | -------- |
-| `place` | data | string | 是       | 地点名称 |
+| 属性   | 位置 | 类型   | 是否必填 | 描述 |
+| ------ | ---- | ------ | -------- | ---- |
+| `lat`  | data | number | 是       | 纬度 |
+| `long` | data | number | 是       | 经度 |
 
 响应数据：
 
 ```json
 {
-  "place": "太阳广场",
-  "created_at": 1234567890
+  "is_first": true,
+  "first": {
+    "place": "太阳广场",
+    "lat": "26.444836",
+    "long": "106.581438",
+    "created_at": 1234567890
+  },
+  "footprint": [
+    {
+      "place": "太阳广场",
+      "lat": "26.444836",
+      "long": "106.581438",
+      "created_at": 1234567890
+    },
+    {
+      "place": "月亮广场",
+      "lat": "26.444836",
+      "long": "106.581438",
+      "created_at": 1234567890
+    }
+  ]
 }
 ```
 
