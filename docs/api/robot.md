@@ -229,6 +229,8 @@ GET /user/:wechat_id/coupon
       "name": "yyy",
       "code": "abc",
       "spot": "abc",
+      "intro_type": "image",
+      "intro_url": "https://",
       "used": false,
       "created_at": 1234567890,
       "used_at": 0
@@ -238,6 +240,8 @@ GET /user/:wechat_id/coupon
       "name": "zzz",
       "spot": "def",
       "code": "def",
+      "intro_type": "image",
+      "intro_url": "https://",
       "used": true,
       "created_at": 1234567890,
       "used_at": 1234567890
@@ -265,6 +269,8 @@ POST /user/:wechat_id/coupon
   "name": "yyy",
   "code": "abc",
   "spot": "abc",
+  "intro_type": "image",
+  "intro_url": "https://",
   "used": false,
   "created_at": 1234567890,
   "used_at": 0
