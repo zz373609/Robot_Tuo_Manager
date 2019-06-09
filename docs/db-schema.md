@@ -46,15 +46,20 @@ collection: `footprint`
 
 collection: `coupon`
 
-| 字段         | 类型 | 名称       | 说明        |
-| ------------ | ---- | ---------- | ----------- |
-| `_id`        | str  | ID         | 主键        |
-| `wechat_id`  | str  | 用户 ID    |             |
-| `name`       | str  | 优惠券名称 |             |
-| `code`       | str  | 优惠码     |             |
-| `used`       | bool | 是否使用过 |             |
-| `created_at` | int  | 添加时间   | UNIX 时间戳 |
-| `used_at`    | int  | 使用时间   | UNIX 时间戳 |
+| 字段                | 类型 | 名称           | 说明        |
+| ------------------- | ---- | -------------- | ----------- |
+| `_id`               | str  | ID             | 主键        |
+| `wechat_id`         | str  | 用户 ID        |             |
+| `name`              | str  | 优惠券名称     |             |
+| `code`              | str  | 优惠码         |             |
+| `intro_type`        | str  | 介绍类型       |             |
+| `intro_url`         | str  | 图片或视频 URL |             |
+| `merchant`          | str  | 商家名称       |             |
+| `merchant_location` | str  | 商家位置       |             |
+| `price`             | int  | 价格           | 单位：分    |
+| `used`              | bool | 是否使用过     |             |
+| `created_at`        | int  | 添加时间       | UNIX 时间戳 |
+| `used_at`           | int  | 使用时间       | UNIX 时间戳 |
 
 ### 用户录音记录
 

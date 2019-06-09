@@ -228,23 +228,14 @@ GET /user/:wechat_id/coupon
       "wechat_id": "xxx",
       "name": "yyy",
       "code": "abc",
-      "spot": "abc",
       "intro_type": "image",
       "intro_url": "https://",
       "used": false,
+      "merchant": "商家",
+      "merchant_location": "太阳广场",
+      "price": 700,
       "created_at": 1234567890,
       "used_at": 0
-    },
-    {
-      "wechat_id": "xxx",
-      "name": "zzz",
-      "spot": "def",
-      "code": "def",
-      "intro_type": "image",
-      "intro_url": "https://",
-      "used": true,
-      "created_at": 1234567890,
-      "used_at": 1234567890
     }
   ]
 }
@@ -268,10 +259,12 @@ POST /user/:wechat_id/coupon
   "wechat_id": "xxx",
   "name": "yyy",
   "code": "abc",
-  "spot": "abc",
   "intro_type": "image",
   "intro_url": "https://",
   "used": false,
+  "merchant": "商家",
+  "merchant_location": "太阳广场",
+  "price": 700,
   "created_at": 1234567890,
   "used_at": 0
 }
