@@ -10,6 +10,7 @@
   - [添加用户足迹](#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E8%B6%B3%E8%BF%B9)
   - [查看用户优惠券](#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8)
   - [添加用户优惠券](#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8)
+  - [使用用用户优惠券](#%E4%BD%BF%E7%94%A8%E7%94%A8%E7%94%A8%E6%88%B7%E4%BC%98%E6%83%A0%E5%88%B8)
   - [获取景点位置信息](#%E8%8E%B7%E5%8F%96%E6%99%AF%E7%82%B9%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
   - [支付](#%E6%94%AF%E4%BB%98)
 
@@ -230,6 +231,8 @@ GET /user/:wechat_id/coupon
       "code": "abc",
       "intro_type": "image",
       "intro_url": "https://",
+      "lat": 26.446445,
+      "long": 26.446445,
       "used": false,
       "merchant": "商家",
       "merchant_location": "太阳广场",
@@ -247,10 +250,14 @@ GET /user/:wechat_id/coupon
 POST /user/:wechat_id/coupon
 ```
 
-| 属性   | 位置 | 类型   | 是否必填 | 描述           |
-| ------ | ---- | ------ | -------- | -------------- |
-| `spot` | data | string | 是       | 优惠券适用景区 |
-| `name` | data | string | 是       | 优惠券名称     |
+| 属性                | 位置 | 类型   | 是否必填 | 描述             |
+| ------------------- | ---- | ------ | -------- | ---------------- |
+| `name`              | data | string | 是       | 优惠券名称       |
+| `merchant`          | data | string | 是       | 商家             |
+| `merchant_location` | data | string | 是       | 商家位置         |
+| `price`             | data | number | 是       | 价格（单位：分） |
+| `intro_type`        | data | number | 是       | 介绍类型         |
+| `intro_url`         | data | number | 是       | 介绍链接         |
 
 响应数据：
 
@@ -267,6 +274,30 @@ POST /user/:wechat_id/coupon
   "price": 700,
   "created_at": 1234567890,
   "used_at": 0
+}
+```
+
+## 使用用用户优惠券
+
+```
+POST /user/:wechat_id/coupon/:coupon_id/use
+```
+
+响应数据：
+
+```json
+{
+  "wechat_id": "xxx",
+  "name": "yyy",
+  "code": "abc",
+  "intro_type": "image",
+  "intro_url": "https://",
+  "used": true,
+  "merchant": "商家",
+  "merchant_location": "太阳广场",
+  "price": 700,
+  "created_at": 1234567890,
+  "used_at": 1234567890
 }
 ```
 
