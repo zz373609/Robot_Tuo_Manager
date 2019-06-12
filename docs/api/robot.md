@@ -231,6 +231,7 @@ GET /user/:wechat_id/coupon
       "code": "abc",
       "image_url": "https://",
       "video_url": "https://",
+      "video_type": "gif",
       "lat": 26.446445,
       "long": 26.446445,
       "used": false,
@@ -250,16 +251,17 @@ GET /user/:wechat_id/coupon
 POST /user/:wechat_id/coupon
 ```
 
-| 属性                | 位置 | 类型   | 是否必填 | 描述             |
-| ------------------- | ---- | ------ | -------- | ---------------- |
-| `name`              | data | string | 是       | 优惠券名称       |
-| `merchant`          | data | string | 是       | 商家             |
-| `merchant_location` | data | string | 是       | 商家位置         |
-| `merchant_lat`      | data | string | 是       | 商家纬度         |
-| `merchant_long`     | data | string | 是       | 商家经度         |
-| `price`             | data | number | 是       | 价格（单位：分） |
-| `image_url`         | data | number | 是       | 图片地址         |
-| `video_url`         | data | number | 是       | 视频地址         |
+| 属性                | 位置 | 类型   | 是否必填 | 描述                 |
+| ------------------- | ---- | ------ | -------- | -------------------- |
+| `name`              | data | string | 是       | 优惠券名称           |
+| `merchant`          | data | string | 是       | 商家                 |
+| `merchant_location` | data | string | 是       | 商家位置             |
+| `merchant_lat`      | data | string | 是       | 商家纬度             |
+| `merchant_long`     | data | string | 是       | 商家经度             |
+| `price`             | data | number | 是       | 价格（单位：分）     |
+| `image_url`         | data | number | 是       | 图片地址             |
+| `video_url`         | data | number | 是       | 视频地址             |
+| `video_type`        | data | number | 是       | 视频类型(gif, video) |
 
 响应数据：
 
@@ -270,6 +272,7 @@ POST /user/:wechat_id/coupon
   "code": "abc",
   "image_url": "https://",
   "video_url": "https://",
+  "video_type": "gif",
   "used": false,
   "merchant": "商家",
   "merchant_location": "太阳广场",
