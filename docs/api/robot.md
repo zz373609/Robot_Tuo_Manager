@@ -255,6 +255,8 @@ POST /user/:wechat_id/coupon
 | `name`              | data | string | 是       | 优惠券名称       |
 | `merchant`          | data | string | 是       | 商家             |
 | `merchant_location` | data | string | 是       | 商家位置         |
+| `merchant_lat`      | data | string | 是       | 商家纬度         |
+| `merchant_long`     | data | string | 是       | 商家经度         |
 | `price`             | data | number | 是       | 价格（单位：分） |
 | `image_url`         | data | number | 是       | 图片地址         |
 | `video_url`         | data | number | 是       | 视频地址         |
@@ -271,6 +273,8 @@ POST /user/:wechat_id/coupon
   "used": false,
   "merchant": "商家",
   "merchant_location": "太阳广场",
+  "merchant_lat": 123.111,
+  "merchant_long": 9.9999,
   "price": 700,
   "created_at": 1234567890,
   "used_at": 0
