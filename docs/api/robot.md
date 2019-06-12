@@ -229,8 +229,8 @@ GET /user/:wechat_id/coupon
       "wechat_id": "xxx",
       "name": "yyy",
       "code": "abc",
-      "intro_type": "image",
-      "intro_url": "https://",
+      "image_url": "https://",
+      "video_url": "https://",
       "lat": 26.446445,
       "long": 26.446445,
       "used": false,
@@ -256,8 +256,8 @@ POST /user/:wechat_id/coupon
 | `merchant`          | data | string | 是       | 商家             |
 | `merchant_location` | data | string | 是       | 商家位置         |
 | `price`             | data | number | 是       | 价格（单位：分） |
-| `intro_type`        | data | number | 是       | 介绍类型         |
-| `intro_url`         | data | number | 是       | 介绍链接         |
+| `image_url`         | data | number | 是       | 图片地址         |
+| `video_url`         | data | number | 是       | 视频地址         |
 
 响应数据：
 
@@ -266,8 +266,8 @@ POST /user/:wechat_id/coupon
   "wechat_id": "xxx",
   "name": "yyy",
   "code": "abc",
-  "intro_type": "image",
-  "intro_url": "https://",
+  "image_url": "https://",
+  "video_url": "https://",
   "used": false,
   "merchant": "商家",
   "merchant_location": "太阳广场",
@@ -290,8 +290,8 @@ POST /user/:wechat_id/coupon/:coupon_id/use
   "wechat_id": "xxx",
   "name": "yyy",
   "code": "abc",
-  "intro_type": "image",
-  "intro_url": "https://",
+  "image_url": "https://",
+  "video_url": "https://",
   "used": true,
   "merchant": "商家",
   "merchant_location": "太阳广场",
