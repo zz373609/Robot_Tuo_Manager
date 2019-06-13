@@ -46,20 +46,22 @@ collection: `footprint`
 
 collection: `coupon`
 
-| 字段                | 类型 | 名称           | 说明        |
-| ------------------- | ---- | -------------- | ----------- |
-| `_id`               | str  | ID             | 主键        |
-| `wechat_id`         | str  | 用户 ID        |             |
-| `name`              | str  | 优惠券名称     |             |
-| `code`              | str  | 优惠码         |             |
-| `intro_type`        | str  | 介绍类型       |             |
-| `intro_url`         | str  | 图片或视频 URL |             |
-| `merchant`          | str  | 商家名称       |             |
-| `merchant_location` | str  | 商家位置       |             |
-| `price`             | int  | 价格           | 单位：分    |
-| `used`              | bool | 是否使用过     |             |
-| `created_at`        | int  | 添加时间       | UNIX 时间戳 |
-| `used_at`           | int  | 使用时间       | UNIX 时间戳 |
+| 字段                | 类型 | 名称         | 说明        |
+| ------------------- | ---- | ------------ | ----------- |
+| `_id`               | str  | ID           | 主键        |
+| `wechat_id`         | str  | 用户 ID      |             |
+| `name`              | str  | 优惠券名称   |             |
+| `spot`              | str  | 景区         |             |
+| `code`              | str  | 优惠码       |             |
+| `image_url`         | str  | 底图链接     |             |
+| `video_url`         | str  | 视频链接 URL |             |
+| `video_type`        | str  | 视频类型     | gif, video  |
+| `merchant`          | str  | 商家名称     |             |
+| `merchant_location` | str  | 商家位置     |             |
+| `price`             | int  | 价格         | 单位：分    |
+| `used`              | bool | 是否使用过   |             |
+| `created_at`        | int  | 添加时间     | UNIX 时间戳 |
+| `used_at`           | int  | 使用时间     | UNIX 时间戳 |
 
 ### 用户录音记录
 
@@ -129,6 +131,7 @@ collection: `good`
 | `_id`        | str  | ID       | 主键     |
 | `kind`       | str  | 类型     |          |
 | `name`       | str  | 名称     |          |
+| `spot`       | str  | 景区     |          |
 | `price`      | int  | 价格     | 单位：分 |
 | `created_at` | int  | 创建时间 |          |
 
