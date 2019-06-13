@@ -254,6 +254,7 @@ POST /user/:wechat_id/coupon
 | 属性                | 位置 | 类型   | 是否必填 | 描述                 |
 | ------------------- | ---- | ------ | -------- | -------------------- |
 | `name`              | data | string | 是       | 优惠券名称           |
+| `spot`              | data | string | 是       | 景区                 |
 | `merchant`          | data | string | 是       | 商家                 |
 | `merchant_location` | data | string | 是       | 商家位置             |
 | `merchant_lat`      | data | string | 是       | 商家纬度             |
@@ -268,6 +269,7 @@ POST /user/:wechat_id/coupon
 ```json
 {
   "wechat_id": "xxx",
+  "spot": "天河潭",
   "name": "yyy",
   "code": "abc",
   "image_url": "https://",
@@ -295,10 +297,12 @@ POST /user/:wechat_id/coupon/:coupon_id/use
 ```json
 {
   "wechat_id": "xxx",
+  "spot": "天河潭",
   "name": "yyy",
   "code": "abc",
   "image_url": "https://",
   "video_url": "https://",
+  "video_type": "gif",
   "used": true,
   "merchant": "商家",
   "merchant_location": "太阳广场",
