@@ -69,6 +69,14 @@ POST /robot/ask
 | `provider`   | body | string | 否       | 语音合成提供者(默认 ths)。可选择:ths, xunfei |
 | `session_id` | body | string | 是       | 会话 ID                                      |
 
+问答协议：
+
+答案分为text、image、video三种类型，不同类型之间的数据使用---[数据类型]---数据---/[数据类型]---包住，同种类型之间的数据使用-----分割，注意数据内不能有-----。例如：
+
+```
+---text---哈哈哈你好-----嘻嘻嘻我不好---/text------image---https://xxxxxxxx---/image---
+```
+
 响应数据：
 
 ```json
