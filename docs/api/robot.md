@@ -175,6 +175,8 @@ POST /user
 GET /user/:wechat_id/footprint
 ```
 
+该接口会返回所有的主要景点，played代表是否已经来过。
+
 响应数据：
 
 ```json
@@ -184,12 +186,16 @@ GET /user/:wechat_id/footprint
       "place": "太阳广场",
       "lat": "26.444836",
       "long": "106.581438",
+      "is_main": true,
+      "played": true,
       "created_at": 1234567890
     },
     {
       "place": "月亮广场",
       "lat": "26.444836",
       "long": "106.581438",
+      "is_main": true,
+      "played": false,
       "created_at": 1234567890
     }
   ]
@@ -217,6 +223,7 @@ POST /user/:wechat_id/footprint
     "place": "太阳广场",
     "lat": "26.444836",
     "long": "106.581438",
+    "is_main": true,
     "created_at": 1234567890
   }
 }

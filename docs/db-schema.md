@@ -71,7 +71,6 @@ collection: `audio`
 | ------------ | ----- | -------------- | ----------- |
 | `_id`        | str   | 录音 ID        | 主键        |
 | `wechat_id`  | str   | 用户 ID        | user 表外键 |
-| `data`       | bytes | 音频二进制文件 |             |
 | `text`       | str   | 转换文本       |             |
 | `created_at` | int   | 创建日期       | UNIX 时间戳 |
 
@@ -79,12 +78,13 @@ collection: `audio`
 
 collection: `location`
 
-| 字段   | 类型  | 名称   | 说明 |
-| ------ | ----- | ------ | ---- |
-| `_id`  | str   | ID     | 主键 |
-| `name` | str   | 景点名 |      |
-| `long` | float | 经度   |      |
-| `lat`  | float | 纬度   |      |
+| 字段      | 类型  | 名称           | 说明 |
+| --------- | ----- | -------------- | ---- |
+| `_id`     | str   | ID             | 主键 |
+| `name`    | str   | 景点名         |      |
+| `is_main` | bool  | 是否是主要景点 |      |
+| `long`    | float | 经度           |      |
+| `lat`     | float | 纬度           |      |
 
 ### 事件
 
