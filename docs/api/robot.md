@@ -129,8 +129,10 @@ key 是事件类型。
   "location": {
     "valid": true,
     "name": "太阳广场",
-    "text": "你好你现在在太阳广场",
-    "link": "https://"
+    "audio": [{
+      "text": "你好你现在在太阳广场",
+      "link": "https://"
+    }]
   },
   "touch_head": {
     "desc": "摸头",
@@ -254,7 +256,7 @@ POST /user/:wechat_id/footprint
     "lat": "26.444836",
     "long": "106.581438",
     "is_main": true,
-    "welcome_audios": [
+    "audio": [
       {
         "text": "你在太阳广场",
         "link": "https://"
