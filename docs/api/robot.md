@@ -42,9 +42,9 @@ POST /robot/to_audio
 
 | 属性       | 位置 | 类型     | 是否必填 | 描述                                                |
 | ---------- | ---- | -------- | -------- | --------------------------------------------------- |
-| `texts`    | data | string[] | 是       | 文字                                                |
-| `provider` | data | string   | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
-| `voice`    | data | string   | 否       | 朗诵人(当前仅讯飞可用，默认 xiaoyan)                |
+| `texts`    | body | string[] | 是       | 文字                                                |
+| `provider` | body | string   | 否       | 语音识别提供者(默认 ths)。可选择:ths, xunfei, baidu |
+| `voice`    | body | string   | 否       | 朗诵人(当前仅讯飞可用，默认 xiaoyan)                |
 
 响应数据：
 
@@ -115,6 +115,12 @@ POST /robot/ask
 GET /event
 ```
 
+| 属性   | 位置 | 类型   | 是否必填 | 描述 |
+| ------ | ---- | ------ | -------- | ---- |
+| `lat`  | query | number | 是       | 纬度 |
+| `long` | query | number | 是       | 经度 |
+
+
 响应数据：
 
 key 是事件类型。
@@ -175,8 +181,8 @@ POST /user
 
 | 属性              | 位置 | 类型   | 是否必填 | 描述         |
 | ----------------- | ---- | ------ | -------- | ------------ |
-| `wechat_code`     | data | string | 是       | 微信 js_code |
-| `activation_code` | data | string | 否       | 激活码       |
+| `wechat_code`     | body | string | 是       | 微信 js_code |
+| `activation_code` | body | string | 否       | 激活码       |
 
 响应数据：
 
@@ -235,8 +241,8 @@ POST /user/:wechat_id/footprint
 
 | 属性   | 位置 | 类型   | 是否必填 | 描述 |
 | ------ | ---- | ------ | -------- | ---- |
-| `lat`  | data | number | 是       | 纬度 |
-| `long` | data | number | 是       | 经度 |
+| `lat`  | body | number | 是       | 纬度 |
+| `long` | body | number | 是       | 经度 |
 
 响应数据：
 
@@ -297,16 +303,16 @@ POST /user/:wechat_id/coupon
 
 | 属性                | 位置 | 类型   | 是否必填 | 描述                 |
 | ------------------- | ---- | ------ | -------- | -------------------- |
-| `name`              | data | string | 是       | 优惠券名称           |
-| `spot`              | data | string | 是       | 景区                 |
-| `merchant`          | data | string | 是       | 商家                 |
-| `merchant_location` | data | string | 是       | 商家位置             |
-| `merchant_lat`      | data | string | 是       | 商家纬度             |
-| `merchant_long`     | data | string | 是       | 商家经度             |
-| `price`             | data | number | 是       | 价格（单位：分）     |
-| `image_url`         | data | number | 是       | 图片地址             |
-| `video_url`         | data | number | 是       | 视频地址             |
-| `video_type`        | data | number | 是       | 视频类型(gif, video) |
+| `name`              | body | string | 是       | 优惠券名称           |
+| `spot`              | body | string | 是       | 景区                 |
+| `merchant`          | body | string | 是       | 商家                 |
+| `merchant_location` | body | string | 是       | 商家位置             |
+| `merchant_lat`      | body | string | 是       | 商家纬度             |
+| `merchant_long`     | body | string | 是       | 商家经度             |
+| `price`             | body | number | 是       | 价格（单位：分）     |
+| `image_url`         | body | number | 是       | 图片地址             |
+| `video_url`         | body | number | 是       | 视频地址             |
+| `video_type`        | body | number | 是       | 视频类型(gif, video) |
 
 响应数据：
 
@@ -391,8 +397,8 @@ POST /pay
 
 | 属性        | 位置 | 类型   | 是否必填 | 描述    |
 | ----------- | ---- | ------ | -------- | ------- |
-| `wechat_id` | data | string | 是       | 用户 ID |
-| `good_id`   | data | string | 是       | 商品 ID |
+| `wechat_id` | body | string | 是       | 用户 ID |
+| `good_id`   | body | string | 是       | 商品 ID |
 
 响应数据：
 
