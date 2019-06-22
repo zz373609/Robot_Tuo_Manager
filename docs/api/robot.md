@@ -121,6 +121,12 @@ key 是事件类型。
 
 ```json
 {
+  "location": {
+    "valid": true,
+    "name": "太阳广场",
+    "text": "你好你现在在太阳广场",
+    "link": "https://"
+  },
   "touch_head": {
     "desc": "摸头",
     "audio": [
@@ -237,6 +243,10 @@ POST /user/:wechat_id/footprint
 ```json
 {
   "valid_place": true,
+  "welcome_audio": {
+    "text": "你在太阳广场",
+    "link": "https://"
+  },
   "current_place": {
     "first_time": true,
     "place": "太阳广场",
