@@ -115,11 +115,10 @@ POST /robot/ask
 GET /event
 ```
 
-| 属性   | 位置 | 类型   | 是否必填 | 描述 |
-| ------ | ---- | ------ | -------- | ---- |
+| 属性   | 位置  | 类型   | 是否必填 | 描述 |
+| ------ | ----- | ------ | -------- | ---- |
 | `lat`  | query | number | 是       | 纬度 |
 | `long` | query | number | 是       | 经度 |
-
 
 响应数据：
 
@@ -249,16 +248,18 @@ POST /user/:wechat_id/footprint
 ```json
 {
   "valid_place": true,
-  "welcome_audio": {
-    "text": "你在太阳广场",
-    "link": "https://"
-  },
   "current_place": {
     "first_time": true,
     "place": "太阳广场",
     "lat": "26.444836",
     "long": "106.581438",
     "is_main": true,
+    "welcome_audios": [
+      {
+        "text": "你在太阳广场",
+        "link": "https://"
+      }
+    ],
     "created_at": 1234567890
   }
 }
