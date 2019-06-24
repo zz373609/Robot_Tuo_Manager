@@ -246,7 +246,7 @@ POST /user/:wechat_id/footprint
 | ------------- | ---- | ------ | -------- | -------------------------------------- |
 | `lat`         | body | number | 是       | 纬度                                   |
 | `long`        | body | number | 是       | 经度                                   |
-| `need_record` | body | bool   | 是       | 是否需要记录（手动打卡），默认为 False |
+| `need_record` | body | bool   | 否       | 是否需要记录（手动打卡），默认为 False |
 
 响应数据：
 
