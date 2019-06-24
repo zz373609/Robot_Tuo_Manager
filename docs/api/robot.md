@@ -129,10 +129,12 @@ key 是事件类型。
   "location": {
     "valid": true,
     "name": "太阳广场",
-    "audio": [{
-      "text": "你好你现在在太阳广场",
-      "link": "https://"
-    }]
+    "audio": [
+      {
+        "text": "你好你现在在太阳广场",
+        "link": "https://"
+      }
+    ]
   },
   "touch_head": {
     "desc": "摸头",
@@ -240,10 +242,11 @@ GET /user/:wechat_id/footprint
 POST /user/:wechat_id/footprint
 ```
 
-| 属性   | 位置 | 类型   | 是否必填 | 描述 |
-| ------ | ---- | ------ | -------- | ---- |
-| `lat`  | body | number | 是       | 纬度 |
-| `long` | body | number | 是       | 经度 |
+| 属性          | 位置 | 类型   | 是否必填 | 描述                                   |
+| ------------- | ---- | ------ | -------- | -------------------------------------- |
+| `lat`         | body | number | 是       | 纬度                                   |
+| `long`        | body | number | 是       | 经度                                   |
+| `need_record` | body | bool   | 是       | 是否需要记录（手动打卡），默认为 False |
 
 响应数据：
 
