@@ -104,7 +104,9 @@ POST /robot/ask
     "name": "天河潭",
     "valid": true,
     "lat": 45.0,
-    "long": 45.0
+    "long": 45.0,
+    "keywords": [],
+    "goto": true
   },
   "session_id": "xxx"
 }
