@@ -1,8 +1,34 @@
 # 后台
 
 - [后台](#%E5%90%8E%E5%8F%B0)
+  - [权限认证](#%E6%9D%83%E9%99%90%E8%AE%A4%E8%AF%81)
   - [用户信息](#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)
   - [景区热度](#%E6%99%AF%E5%8C%BA%E7%83%AD%E5%BA%A6)
+
+## 权限认证
+
+```
+POST /auth
+```
+
+| 属性       | 位置 | 类型   | 是否必填 | 描述                      |
+| ---------- | ---- | ------ | -------- | ------------------------- |
+| `username` | body | String | 是       | 用户名                    |
+| `password` | body | String | 是       | 密码（使用 MD5 掩盖明文） |
+
+响应数据：
+
+```json
+{
+    "access_token": "xxxxxxxxxxxxxxxx"
+}
+```
+
+请求有权限要求的接口，需要在header添加以下键值对：
+
+```
+Authorization: JWT xxxxxxxxxxxxxxxx
+```
 
 ## 用户信息
 
@@ -14,8 +40,8 @@ GET /admin/user
 | ------------ | ----- | ------- | -------- | -------------------------------------------------------- |
 | `page`       | query | integer | 否       | 页码，默认 1                                             |
 | `page_size`  | query | integer | 否       | 每页数量，默认 20                                        |
-| `order_by`   | query | str     | 否       | 排序依据，默认 created_at                                |
-| `asc`        | query | str     | 否       | 是否升序（若为空则降序，不为空则升序）                   |
+| `order_by`   | query | string  | 否       | 排序依据，默认 created_at                                |
+| `asc`        | query | string  | 否       | 是否升序（若为空则降序，不为空则升序）                   |
 | `tag`        | query | string  | 否       | 会员类别名称，默认「天河潭会员」                         |
 | `start_time` | query | integer | 否       | 开始时间，默认-1（格式是 10 位时间戳，例如：1562755473） |
 | `end_time`   | query | integer | 否       | 结束时间，默认-1（格式是 10 位时间戳，例如：1562755473） |
