@@ -20,11 +20,11 @@ POST /auth
 
 ```json
 {
-    "access_token": "xxxxxxxxxxxxxxxx"
+  "access_token": "xxxxxxxxxxxxxxxx"
 }
 ```
 
-请求有权限要求的接口，需要在header添加以下键值对：
+请求有权限要求的接口，需要在 header 添加以下键值对：
 
 ```
 Authorization: JWT xxxxxxxxxxxxxxxx
