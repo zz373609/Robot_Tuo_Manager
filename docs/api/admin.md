@@ -166,8 +166,16 @@ GET /admin/audio
       },
       "provider": "xunfei",
       "created_at": 1561994604,
-      "id": "5d1a256c77bbd8aabe28cb5c"
+      "id": "5d1a256c77bbd8aabe28cb5c",
+      "answer_type": "has_answer"
     }
   ]
 }
 ```
+
+answer_type：
+
+"has_answer" 有答案
+"no_answer" 无答案兜底
+"no_record" 无录音兜底
+"" 无记录
